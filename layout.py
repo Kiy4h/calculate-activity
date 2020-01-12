@@ -238,7 +238,8 @@ class CalcLayout:
 
 # Left part: buttons
         self.pad = Gtk.Grid()
-        # self.pad.set_column_homogeneous(True)
+        self.pad.set_column_homogeneous(True)
+        self.pad.set_row_homogeneous(True)
         self.pad.set_row_spacing(6)
         self.pad.set_column_spacing(6)
         self.create_button_data()
@@ -248,12 +249,12 @@ class CalcLayout:
                 _(cap), cb, self.col_white, bgcol, w, h)
             self.buttons[cap] = button
             self.pad.attach(button, x, y, w, h)
-
+        box = Gtk.Box()
         eb = Gtk.EventBox()
         eb.add(self.pad)
         eb.modify_bg(Gtk.StateType.NORMAL, self.col_black)
-        vc1.pack_start(eb, expand=True, fill=True, padding=0)
-        self.grid.attach(eb, 0, 6, 7, 20)
+        box.pack_start(eb, True, True, 0)
+        self.grid.attach(box, 0, 6, 7, 20)
 
 # Right part: container and equation button
         hc2 = Gtk.HBox()
