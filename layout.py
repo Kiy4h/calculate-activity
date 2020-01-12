@@ -238,7 +238,7 @@ class CalcLayout:
 
 # Left part: buttons
         self.pad = Gtk.Grid()
-        self.pad.set_column_homogeneous(True)
+        # self.pad.set_column_homogeneous(True)
         self.pad.set_row_spacing(6)
         self.pad.set_column_spacing(6)
         self.create_button_data()
