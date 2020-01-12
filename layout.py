@@ -252,6 +252,7 @@ class CalcLayout:
         eb = Gtk.EventBox()
         eb.add(self.pad)
         eb.modify_bg(Gtk.StateType.NORMAL, self.col_black)
+        vc1.pack_start(eb, expand=True, fill=True, padding=0)
         self.grid.attach(eb, 0, 6, 7, 20)
 
 # Right part: container and equation button
